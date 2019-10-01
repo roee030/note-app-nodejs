@@ -1,5 +1,7 @@
+const yargs = require('yargs')
 
-if(process.argv[4] == undefined)
-console.log(process.argv[3])
 
-command = process.args[3];
+command = process.args;
+console.log(yargs.argv);
+console.log('-------------------------')
+console.log(process.argv)
