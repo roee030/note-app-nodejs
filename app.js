@@ -1,3 +1,3 @@
 const fs = require('fs');
 
-fs.writeFileSync('notes.txt',"Hello it's me!")
+fs.appendFileSync('notes.txt',"Hello it's me!")
