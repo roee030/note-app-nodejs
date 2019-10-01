@@ -1,4 +1,3 @@
-var validator = require('validator');
 
-
-console.log(validator.isCreditCard('207186449'))
+if(process.argv[4] == undefined)
+console.log(process.argv[3])
