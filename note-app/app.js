@@ -4,8 +4,22 @@ const yargs = require('yargs')
 yargs.command({
     command: 'add',
     describe: 'add a new note',
-    handler: function(){ console.log('using add command')}
+    //builder is an object that define all the arguments options
+    builder: {
+        title:{
+        describe:'Note Title',
+        demandOption: true,
+        type: 'string'
+    },
+        body:{
+            describe:'Note Body',
+            demandOption: true,
+            type: 'string'
+        }
+},
+    handler: function(builder){ console.log('Title: '+builder.title+"\n"+'Body msg: '+builder.body)}
 })
+
 //Create remove command
 
 yargs.command({
@@ -27,4 +41,4 @@ yargs.command({
     handler: function(){ console.log('using list command')}
 })
 
-//console.log(yargs.argv)
+yargs.parse();
