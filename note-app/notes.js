@@ -7,7 +7,11 @@ const getNotes = function ()
 const addNotes = function(title,body)
 {
     const notes = loadNotes()
-
+    notes.push({
+        title: title,
+        body: body
+    })
+    console.log(notes)
 }
 
 const loadNotes = function()
@@ -21,7 +25,7 @@ const loadNotes = function()
         return []
     }
 }
-
+/*
 //get the bytes of the file
 const dataBuffer = fs.readFileSync('1-json.json')
 //change it to string var
@@ -41,3 +45,7 @@ let json1 = JSON.parse(json2);
 
 console.log(json1.title);
 //console.log(json2);*/
+module.exports = {
+    getNotes: getNotes,
+    addNotes: addNotes
+}
