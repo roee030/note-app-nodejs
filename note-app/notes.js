@@ -20,10 +20,10 @@ const addNotes = function(title,body)
                 body: body
         })
         saveNotes(notes)
-        console.log('Add new note')
+        console.log(chalk.blue.inverse('Add new note'))
     }
         else{
-            console.log('This title has been used!'+ "\n"+'try a different title')
+            console.log(chalk.red.inverse('This title has been used!'+ "\n"+'try a different title'))
         }
     
    
