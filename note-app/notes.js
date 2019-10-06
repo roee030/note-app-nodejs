@@ -9,6 +9,9 @@ const addNotes = function(title,body)
 {
     const notes = loadNotes()
     const duplicateNotes = notes.filter(function(notes){
+        return notes.title === title
+    })
+
         if(duplicateNotes.length === 0)
         {
             notes.push({
@@ -19,9 +22,9 @@ const addNotes = function(title,body)
         console.log('Add new note')
     }
         else{
-            console.log('This title has been used! /n try a different title')
+            console.log('This title has been used!'+ "\n"+'try a different title')
         }
-    })
+    
    
 
 }
