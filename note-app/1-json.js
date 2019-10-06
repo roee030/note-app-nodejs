@@ -1,8 +1,14 @@
 const fs = require('fs')
-const books={ 
-    title:'Ego is the enemy',
-    author:'Yaniv bucris'
+
+const getNotes = function ()
+{
+    return 'Your Notes...'
 }
+const addNotes = function(title,body)
+{
+    const notes = loadNotes
+}
+
 
 //get the bytes of the file
 const dataBuffer = fs.readFileSync('1-json.json')
