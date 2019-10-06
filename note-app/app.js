@@ -17,7 +17,10 @@ yargs.command({
             type: 'string'
         }
 },
-    handler: function(builder){ console.log('Title: '+builder.title+"\n"+'Body msg: '+builder.body)}
+    handler: function(builder)
+        {
+         console.log('Title: '+builder.title+"\n"+'Body msg: '+builder.body)
+        }
 })
 
 //Create remove command
