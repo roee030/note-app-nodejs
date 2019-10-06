@@ -46,6 +46,24 @@ const loadNotes = function()
         return []
     }
 }
+
+const removeNote = function(title)
+{
+    const notes = loadNotes()
+    const duplicateNotes = notes.filter(function(title)
+    {
+        if(notes.title === title)
+        {
+            
+        }
+    })
+
+
+
+}
+
+
+
 /*
 //get the bytes of the file
 const dataBuffer = fs.readFileSync('1-json.json')
