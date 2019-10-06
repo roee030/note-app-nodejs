@@ -18,13 +18,12 @@ const addNotes = function(title,body)
         saveNotes(notes)
         console.log('Add new note')
     }
-        
+        else{
+            console.log('This title has been used! /n try a different title')
+        }
     })
-    notes.push({
-        title: title,
-        body: body
-    })
-    saveNotes(notes)
+   
+
 }
 
 const saveNotes = function (notes)
