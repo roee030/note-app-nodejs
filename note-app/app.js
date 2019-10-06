@@ -36,8 +36,8 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function(){
-        console.log('using remove command')
+    handler: function(builder){
+        notes.removeNote(builder.title)
         }
 })
 
