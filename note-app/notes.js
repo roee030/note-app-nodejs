@@ -54,7 +54,7 @@ const removeNote = function(title)
     {
         if(notes.title === title)
         {
-            
+
         }
     })
 
@@ -86,5 +86,6 @@ console.log(json1.title);
 //console.log(json2);*/
 module.exports = {
     getNotes: getNotes,
-    addNotes: addNotes
+    addNotes: addNotes,
+    removeNote: removeNote
 }
