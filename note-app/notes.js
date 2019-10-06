@@ -6,9 +6,21 @@ const getNotes = function ()
 }
 const addNotes = function(title,body)
 {
-    const notes = loadNotes
+    const notes = loadNotes()
+
 }
 
+const loadNotes = function()
+{
+    try{
+        const dataBuffer = fs.readFileSync('notes.json')
+        const dataJSON = dataBuffer.toString();
+        const data = JSON.parse(dataJSON)
+        return data
+    }catch{
+        return []
+    }
+}
 
 //get the bytes of the file
 const dataBuffer = fs.readFileSync('1-json.json')
