@@ -6,12 +6,10 @@ const getNotes = function ()
     return 'Your Notes...'
 }
 
-const addNotes = function(title,body)
+const addNotes = (title,body) =>
 {
     const notes = loadNotes()
-    const duplicateNotes = notes.filter(function(notes){
-        return notes.title === title
-    })
+    const duplicateNotes = notes.filter((notes)=>notes.title === title)
 
         if(duplicateNotes.length === 0)
         {
@@ -30,13 +28,13 @@ const addNotes = function(title,body)
 
 }
 
-const saveNotes = function (notes)
+const saveNotes =  (notes) =>
 {
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json',dataJSON)
 }
 
-const loadNotes = function()
+const loadNotes = ()=>
 {
     try{
         const dataBuffer = fs.readFileSync('notes.json')
@@ -48,14 +46,10 @@ const loadNotes = function()
     }
 }
 
-const removeNote = function(title)
+const removeNote = (title) =>
 {
     const notes = loadNotes()
-    const notesToKeep = notes.filter(function(n)
-    {
-       
-        return n.title !== title
-    })
+    const notesToKeep = notes.filter((n)=> n.title !== title)
     if(notes.length > notesToKeep.length)
     {
         console.log(chalk.blue.inverse("Note has been remove"))
