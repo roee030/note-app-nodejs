@@ -48,10 +48,12 @@ yargs.command({
     describe: 'read note',
     handler(){ console.log('using read command')}
 })
+
+//Listing the notes
 yargs.command({
     command: 'list',
     describe: 'show list',
-    handler(){ console.log('listing out all your notes')}
+    handler(){ notes.listNotes()}
 })
 
 yargs.parse();

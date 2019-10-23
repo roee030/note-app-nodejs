@@ -1,9 +1,9 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const getNotes = function ()
+const getNotes =  () =>
 {
-    return 'Your Notes...'
+    return "Your notes"
 }
 
 const addNotes = (title,body) =>
@@ -60,7 +60,16 @@ const removeNote = (title) =>
     saveNotes(notesToKeep);
 }
 
+const listNotes = () =>
+{
+    console.log(chalk.green("Your notes:"))
+    data = loadNotes()
+    data.forEach(list => {
+        console.log(chalk.green(list.title))
+    });
+}
 
+}
 
 /*
 //get the bytes of the file
@@ -85,5 +94,7 @@ console.log(json1.title);
 module.exports = {
     getNotes: getNotes,
     addNotes: addNotes,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
+
 }
