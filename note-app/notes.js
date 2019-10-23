@@ -9,9 +9,9 @@ const getNotes =  () =>
 const addNotes = (title,body) =>
 {
     const notes = loadNotes()
-    const duplicateNotes = notes.filter((notes)=>notes.title === title)
+    const duplicateNote = notes.find((notes)=>notes.title === title)
 
-        if(duplicateNotes.length === 0)
+        if(!duplicateNote)
         {
             notes.push({
                 title: title,
@@ -69,6 +69,13 @@ const listNotes = () =>
     });
 }
 
+const readNote = (mytitle) =>{
+    const data = loadNotes()
+    const specific = data.find((note)=>mytitle === note.title)
+    if(specific) {console.log(chalk.white.inverse(specific.title + " " + specific.body))}
+    else{
+        console.log(chalk.red.inverse("there isn't a title such as "+mytitle))
+    }
 }
 
 /*
@@ -95,6 +102,7 @@ module.exports = {
     getNotes: getNotes,
     addNotes: addNotes,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 
 }
